@@ -1,14 +1,18 @@
 path = require 'path'
 
-{$, $$$, ScrollView} = require 'atom'
+{$, $$$} = require 'atom'
+
 _ = require 'underscore-plus'
 fs = require 'fs-plus'
 {File} = require 'pathwatcher'
 
+PreviewView = require './preview-view'
 renderer = require './renderer'
 
+console.log PreviewView
+
 module.exports =
-class MarkdownPreviewView extends ScrollView
+class MarkdownPreviewView extends PreviewView
   @content: ->
     @div class: 'markdown-preview native-key-bindings', tabindex: -1
 
